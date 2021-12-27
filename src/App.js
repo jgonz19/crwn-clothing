@@ -1,5 +1,4 @@
 import React from "react";
-import "./homepage.styles.scss"
 import './App.css';
 import {connect} from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -15,6 +14,7 @@ import {auth, createUserProfileDocument} from "./firebase/firebase.utils"
 
 import {setCurrentUser} from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
+
 
 
 class App extends React.Component{
@@ -39,6 +39,8 @@ class App extends React.Component{
       }
       else
         setCurrentUser(userAuth);
+    
+
       
       
     });
@@ -77,6 +79,7 @@ class App extends React.Component{
 
   const mapStateToProps = createStructuredSelector({
     currentUser : selectCurrentUser,
+  
   })
 
   const mapDispatchToProps = dispatch => ({
